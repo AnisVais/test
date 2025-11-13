@@ -1,0 +1,484 @@
+/* Сброс стандартных стилей браузера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Учитываем padding и border в ширине элемента */
+}
+
+/* Базовые стили для body */
+body {
+    font-family: 'Roboto', sans-serif; /* Используем Roboto как основной шрифт */
+    line-height: 1.6; /* Межстрочный интервал */
+    color: #333; /* Цвет текста */
+    background-color: #f8f9fa; /* Цвет фона */
+    scroll-behavior: smooth; /* Плавная прокрутка при клике на ссылки-якоря */
+}
+
+/* Стили для класса container */
+.container {
+    max-width: 1200px; /* Максимальная ширина */
+    margin: 0 auto; /* Центрирование по горизонтали */
+    padding: 0 20px; /* Внутренние отступы слева и справа */
+}
+
+/* --- Header --- */
+.site-header {
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky; /* Фиксируем хедер при прокрутке */
+    top: 0;
+    z-index: 1000; /* Чтобы хедер был поверх других элементов */
+}
+
+.site-header .container {
+    display: flex; /* Включаем flexbox */
+    justify-content: space-between; /* Равномерное распределение по горизонтали */
+    align-items: center; /* Выравнивание по вертикали по центру */
+}
+
+.logo a {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2c3e50;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif; /* Шрифт для логотипа */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #34495e;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #1abc9c; /* Цвет при наведении */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    /* Замените 'images/hero-bg.jpg' на ваше фоновое изображение */
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+.hero-section::before { /* Затемнение для лучшей читаемости текста */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-section .container {
+    position: relative; /* Чтобы элементы были поверх затемнения */
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-family: 'Open Sans', sans-serif; /* Шрифт для заголовка */
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif; /* Шрифт для текста */
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #1abc9c;
+    color: #ffffff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto', sans-serif; /* Шрифт для кнопки */
+}
+
+.btn-primary:hover {
+    background-color: #16a085;
+}
+
+/* --- About Section --- */
+.about-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовков */
+    font-weight: 700;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif; /* Шрифт для текста */
+}
+
+/* --- Gallery Section --- */
+.gallery-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовков */
+    font-weight: 700;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Адаптивная сетка */
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px; /* Фиксированная высота для изображений */
+    object-fit: cover; /* Обрезка изображений для заполнения */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* --- Tariffs Section --- */
+.tariffs-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.tariffs-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовков */
+    font-weight: 700;
+}
+
+.tariffs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.tariff-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Растягиваем контент */
+}
+
+.tariff-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.tariff-card h3 {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-family: 'Open Sans', sans-serif; /* Шрифт для заголовков карточек */
+    font-weight: 700;
+}
+
+.tariff-card .price {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #1abc9c;
+    margin-bottom: 25px;
+    font-family: 'Roboto', sans-serif; /* Шрифт для цен */
+}
+
+.tariff-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Занимает все доступное пространство */
+}
+
+.tariff-card li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #555;
+    font-family: 'Roboto', sans-serif; /* Шрифт для текста в карточках */
+}
+
+.tariff-card li::before {
+    content: '✔ '; /* Символ галочки */
+    color: #1abc9c;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: #34495e;
+    color: #ffffff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto', sans-serif; /* Шрифт для кнопки */
+}
+
+.btn-secondary:hover {
+    background-color: #2c3e50;
+}
+
+/* --- Contacts Section --- */
+.contacts-section {
+    padding: 80px 0;
+    background-color: #f0f2f5;
+}
+
+.contacts-section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовков */
+    font-weight: 700;
+}
+
+.contacts-content {
+    display: flex;
+    flex-wrap: wrap; /* Разрешаем перенос на мобильных */
+    gap: 40px;
+    align-items: center;
+}
+
+.contacts-content .address {
+    flex: 1; /* Занимает доступное пространство */
+    min-width: 300px; /* Минимальная ширина блока */
+}
+
+.contacts-content .address p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif; /* Шрифт для текста */
+}
+
+.contacts-content .map-placeholder {
+    flex: 1; /* Занимает доступное пространство */
+    min-width: 300px; /* Минимальная ширина блока */
+    text-align: center;
+}
+
+.contacts-content .map-placeholder iframe {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Для адаптивности */
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 0.95em;
+    font-family: 'Roboto', sans-serif; /* Шрифт для футера */
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+}
+
+.language-switcher p {
+    margin-right: 10px;
+    font-size: 0.95em;
+    font-family: 'Roboto', sans-serif; /* Шрифт для текста */
+}
+
+.language-switcher ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.language-switcher li {
+    margin-left: 15px;
+}
+
+.language-switcher a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-family: 'Roboto', sans-serif; /* Шрифт для ссылок */
+}
+
+.language-switcher a:hover {
+    color: #1abc9c;
+}
+
+/* --- Адаптивность (Media Queries) --- */
+
+/* Для экранов меньше 992px */
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 3em;
+    }
+
+    .tariffs-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .contacts-content {
+        flex-direction: column; /* Колонки друг под другом */
+        align-items: center;
+    }
+
+    .contacts-content .address,
+    .contacts-content .map-placeholder {
+        width: 100%; /* Занимают всю ширину */
+        text-align: center;
+    }
+
+    .site-footer .container {
+        flex-direction: column;
+    }
+
+    .language-switcher {
+        margin-top: 15px;
+    }
+}
+
+/* Для экранов меньше 768px */
+@media (max-width: 768px) {
+    .site-header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+    }
+
+    .main-nav li {
+        margin: 5px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1.1em;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Одноколоночный макет */
+    }
+
+    .tariffs-grid {
+        grid-template-columns: 1fr; /* Одноколоночный макет */
+    }
+}
+
+/* Для экранов меньше 576px */
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 80px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .about-section,
+    .gallery-section,
+    .tariffs-section,
+    .contacts-section {
+        padding: 60px 0;
+    }
+
+    .about-section h2,
+    .gallery-section h2,
+    .tariffs-section h2,
+    .contacts-section h2 {
+        font-size: 2em;
+    }
+
+    .tariff-card {
+        padding: 25px;
+    }
+
+    .tariff-card .price {
+        font-size: 1.8em;
+    }
+}
